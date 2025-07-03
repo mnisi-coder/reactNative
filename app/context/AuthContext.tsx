@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 const [loading, setLoading] = useState(false);
 const login = async (username: string, password: string) => {
   if (!username || !password) {
-    Alert.alert('Error', 'Please enter both username and password.');
+    Alert.alert('Missing Details', 'Please enter both username and password.');
     return;
   }
 

@@ -6,7 +6,7 @@ const DashboardScreen = () => {
     <View style={styles.container}>
       <Text style={styles.title}>📊 Dashboard</Text>
       <Text>Welcome to the dashboard screen.</Text>
-      <Text>Here you can add widgets, stats, or charts.</Text>
+      <Text>Here the driver sees all their activities.</Text>
     </View>
   );
 };

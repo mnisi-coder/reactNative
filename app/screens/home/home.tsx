@@ -1,17 +1,59 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { useAuth } from '../../context/AuthContext';
+
+import { SvgXml } from 'react-native-svg';
 
 const HomeScreen = () => {
   const { user } = useAuth();
-
+// 
   return (
+    
+
+        
     <View style={styles.container}>
-      <Text style={styles.title}>🏠 Home</Text>
-      <Text style={styles.welcome}>Welcome back, {user?.username}!</Text>
-      <Text style={styles.message}>
-        This is the home screen. You can navigate to your dashboard, profile, or settings from the bottom tab.
-      </Text>
+        <>
+            <View style={styles.top}>
+
+
+                <Text style={styles.title}>Get Started</Text>
+                <Text>Welcome, {user?.username}!</Text>
+                <Text>Explore the app and enjoy your experience.</Text>
+            </View>
+
+            <View style={styles.bottom}>
+                <Pressable>
+                    <View style={styles.cards}>
+                        <Text>Shift Logger</Text>
+                    </View>
+                </Pressable>
+
+                <Pressable>
+                <View style={styles.cards}>
+
+                    <Text>Claim</Text>
+                </View>
+                </Pressable>
+
+<               Pressable>
+                <View style={styles.cards}>
+                    <Text>
+                        Notifications
+                    </Text>
+                </View>
+                </Pressable>
+                
+                <Pressable>
+                <View style={styles.cards}>
+                    <Text>
+                        Issue
+                    </Text>
+                </View>
+
+                </Pressable>
+            </View>
+        
+        </>
     </View>
   );
 };
@@ -21,20 +63,49 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    justifyContent: 'center',
+    height: '100%',
+    width: '100%',
+    
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
   },
-  welcome: {
-    fontSize: 18,
-    marginBottom: 15,
+  top:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFFF00',
+    height: "80%", 
+    width: '100%',
   },
-  message: {
-    fontSize: 16,
-    color: '#555',
-  },
-});
+bottom: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    height: "20%", 
+    maxHeight: 300, 
+    width: '100%',
+    padding: 20,
+    backgroundColor: '#f5f5f5',
+    },
+    cards:{
+        marginTop: 20,
+        backgroundColor: '#ffff',
+        height: 100,
+        width: 150,
+        borderRadius: 10,
+        textAlign: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: '#005f6c', // blue shadow color
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 1,
+        shadowRadius: 10,
+        elevation: 5,
+    }
+  }
+);
