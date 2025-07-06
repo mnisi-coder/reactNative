@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useAuth } from '../../context/AuthContext';
 
-import { SvgXml } from 'react-native-svg';
+
 
 const HomeScreen = () => {
   const { user } = useAuth();
@@ -14,20 +14,24 @@ const HomeScreen = () => {
     <View style={styles.container}>
         <>
             <View style={styles.top}>
+                <Image
+                    source={require('../../../assets/images/back.png')}
+                    style={{ width: '100%', height: '100%'}}
+                />
 
 
-                <Text style={styles.title}>Get Started</Text>
-                <Text>Welcome, {user?.username}!</Text>
-                <Text>Explore the app and enjoy your experience.</Text>
             </View>
 
             <View style={styles.bottom}>
+
+            
                 <Pressable>
                     <View style={styles.cards}>
                         <Text>Shift Logger</Text>
+
                     </View>
                 </Pressable>
-
+                
                 <Pressable>
                 <View style={styles.cards}>
 
@@ -90,9 +94,9 @@ bottom: {
     maxHeight: 300, 
     width: '100%',
     padding: 20,
-    backgroundColor: '#f5f5f5',
-    },
-    cards:{
+    backgroundColor: '#f2f3f4', 
+  },
+cards:{
         marginTop: 20,
         backgroundColor: '#ffff',
         height: 100,
